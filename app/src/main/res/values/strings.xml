@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application Curso</string>
+
+    <string name="item_inicio">Inicio</string>
+    <string name="item_chats">Chats</string>
+    <string name="item_vender">Vender</string>
+    <string name="item_mis_anuncios">Mis anuncios</string>
+    <string name="item_cuenta">Cuenta</string>
+
+    <string name="tituloRL">Titulo</string>
+</resources>
