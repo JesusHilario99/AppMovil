@@ -87,8 +87,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_registrar"
             android:layout_width="180dp"
-            android:layout_height="@dimen/my_buttom_heigth"/>
+            android:layout_height="@dimen/my_buttom_heigth"
+            android:text="@string/btn_registrar"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="15dp"/>
 
 
 
