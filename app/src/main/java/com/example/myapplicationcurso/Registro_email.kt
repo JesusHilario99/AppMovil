@@ -1,6 +1,7 @@
 package com.example.myapplicationcurso
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
@@ -8,6 +9,7 @@ import android.widget.Toast
 import com.example.myapplicationcurso.databinding.ActivityRegistroEmailBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class Registro_email : AppCompatActivity() {
 
@@ -69,7 +71,7 @@ class Registro_email : AppCompatActivity() {
 
 
     private fun registrarUser(){
-        progressDialog.setCancelMessage("Creando cuenta")
+        progressDialog.setMessage("Creando cuenta")
         progressDialog.show()
 
         firebaseAuth.createUserWithEmailAndPassword(email,password)
@@ -102,7 +104,18 @@ class Registro_email : AppCompatActivity() {
         hashMap["fecha_nac"] = ""
 
 
-
+        val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+        ref.child(uidUser!!)
+            .setValue(hashMap)
+            .addOnSuccessListener {
+                progressDialog.dismiss()
+                startActivity(Intent(this,MainActivity::class.java))
+                finishAffinity()
+            }
+            .addOnFailureListener{e->
+                progressDialog.dismiss()
+                Toast.makeText(this,"No se registro debido a ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 
 

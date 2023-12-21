@@ -1,5 +1,6 @@
 package com.example.myapplicationcurso
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.FragmentTransaction
@@ -8,17 +9,21 @@ import com.example.myapplicationcurso.fragmentos.FragmentChats
 import com.example.myapplicationcurso.fragmentos.FragmentCuenta
 import com.example.myapplicationcurso.fragmentos.FragmentInicio
 import com.example.myapplicationcurso.fragmentos.FragmentMisAnuncios
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
+    private  lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        comprobarsesion()
 
         verFragmentInicio()
 
@@ -47,6 +52,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun comprobarsesion() {
+        if(firebaseAuth.currentUser == null){
+            startActivity(Intent(this,OpcionesdeLogin::class.java))
+            finishAffinity()
+        }
     }
 
     private fun verFragmentInicio(){
