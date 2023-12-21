@@ -26,6 +26,9 @@
     <string name="btn_registrar">Registrar</string>
 
     <string name="btn_cerrarSesion">Cerrar Sesión</string>
+    <string name="txt_perfil">Perfin de Usuario</string>
+    <string name="txt_informacion">Informacion: </string>
+    <string name=""></string>
 
 
 </resources>
