@@ -25,10 +25,29 @@
     <string name="et_r_password">Repetir Contraseña</string>
     <string name="btn_registrar">Registrar</string>
 
-    <string name="btn_cerrarSesion">Cerrar Sesión</string>
+
+    <!-- Perfil de usuario -->
     <string name="txt_perfil">Perfin de Usuario</string>
     <string name="txt_informacion">Informacion: </string>
-    <string name=""></string>
+    <string name="txt_nombres">Nombres</string>
+    <string name="tv_nombres">Nombres Completos</string>
+    <string name="txt_email">Email</string>
+    <string name="tv_email">email@dominio.com</string>
+    <string name="txt_fechNac">Fecha de nac...</string>
+    <string name="tv_nacimiento">dd/mm/aaaa</string>
+    <string name="txt_miembro">Miembro desde</string>
+    <string name="tv_miembro">dd/mm/aaaa</string>
+    <string name="txt_telefono">Telefono</string>
+    <string name="tv_telefono">000-000-000</string>
+    <string name="txt_estadocuenta">Estado de Cuenta</string>
+    <string name="tv_estadocuenta">No verificado</string>
+    <string name="btn_cerrarSesion">Cerrar Sesión</string>
+    <string name="txt_opciones">Opciones</string>
+    <string name="btn_editarPerfil">Editar Perfil</string>
+
+
+
+
 
 
 </resources>
